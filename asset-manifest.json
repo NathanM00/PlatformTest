@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/PlatformTest/static/css/main.006a4369.chunk.css",
+    "main.js": "/PlatformTest/static/js/main.2b162849.chunk.js",
+    "main.js.map": "/PlatformTest/static/js/main.2b162849.chunk.js.map",
+    "runtime-main.js": "/PlatformTest/static/js/runtime-main.2467bbce.js",
+    "runtime-main.js.map": "/PlatformTest/static/js/runtime-main.2467bbce.js.map",
+    "static/css/2.e05ca8d5.chunk.css": "/PlatformTest/static/css/2.e05ca8d5.chunk.css",
+    "static/js/2.21d24a52.chunk.js": "/PlatformTest/static/js/2.21d24a52.chunk.js",
+    "static/js/2.21d24a52.chunk.js.map": "/PlatformTest/static/js/2.21d24a52.chunk.js.map",
+    "index.html": "/PlatformTest/index.html",
+    "static/css/2.e05ca8d5.chunk.css.map": "/PlatformTest/static/css/2.e05ca8d5.chunk.css.map",
+    "static/css/main.006a4369.chunk.css.map": "/PlatformTest/static/css/main.006a4369.chunk.css.map",
+    "static/js/2.21d24a52.chunk.js.LICENSE.txt": "/PlatformTest/static/js/2.21d24a52.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/PlatformTest/static/media/Nunito-Regular.09b2f37e.ttf",
+    "static/media/banner1.cb5b2c4b.png": "/PlatformTest/static/media/banner1.cb5b2c4b.png",
+    "static/media/banner2.be30a4ba.png": "/PlatformTest/static/media/banner2.be30a4ba.png",
+    "static/media/clock.3291a2b9.png": "/PlatformTest/static/media/clock.3291a2b9.png",
+    "static/media/logo.b814a231.png": "/PlatformTest/static/media/logo.b814a231.png",
+    "static/media/profilePic.8627c5cf.png": "/PlatformTest/static/media/profilePic.8627c5cf.png",
+    "static/media/slick-theme.css": "/PlatformTest/static/media/slick.c94f7671.ttf",
+    "static/media/welcomeImage.52af2fca.png": "/PlatformTest/static/media/welcomeImage.52af2fca.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2467bbce.js",
+    "static/css/2.e05ca8d5.chunk.css",
+    "static/js/2.21d24a52.chunk.js",
+    "static/css/main.006a4369.chunk.css",
+    "static/js/main.2b162849.chunk.js"
+  ]
+}

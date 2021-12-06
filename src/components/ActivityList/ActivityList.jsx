@@ -72,14 +72,13 @@ function ActivityList(props) {
   }));  
 
   const IconButton = styled(Box)(({theme})=>({
-    height:'20%',
+    height:'15px',
     alignSelf:'center',
-    marginBottom:'1%',
+    justifyContent:'center',
+    alignItems:'center',
+    display:'flex',
+    width:'15px',
     padding:0,
-    [theme.breakpoints.down('sm')]: {
-      marginBottom:'0%',
-      height:'15%',
-    }
   }));  
 
   return (

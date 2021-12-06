@@ -80,6 +80,7 @@ function MainDrawer(props) {
 
         <IconButton 
           sx={{
+            width:'100%',
             height:'8%',alignItems:'center',
             justifyContent:'center',
             display: { xs: 'flex', sm: 'none' }
@@ -141,7 +142,7 @@ function MainDrawer(props) {
           }}
           sx={{
             display: { xs: 'flex', sm: 'none' },
-            '& .MuiDrawer-paper': {backgroundColor:'rgb(55,135,251)', width: '10%' },
+            '& .MuiDrawer-paper': {backgroundColor:'rgb(55,135,251)', width: '15%' },
           }}
         >
           {DrawerContent}

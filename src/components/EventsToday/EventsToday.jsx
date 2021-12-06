@@ -87,7 +87,7 @@ function EventsToday(props) {
         width:'85%',
       },
       [theme.breakpoints.only('xs')]: {
-        width:'170px',
+        width:'150px',
       }
     })); 
 

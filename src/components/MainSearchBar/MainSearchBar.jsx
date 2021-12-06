@@ -123,8 +123,8 @@ function MainSearchBar(props) {
 
   const MobileAvatar = styled(Avatar)(({theme}) => ({
     display:'inline-block',
-    width:'90%',
-    height:'90%',
+    width:'80%',
+    height:'80%',
     opacity: openMobileNotis ? 0.8 : 1,
   }));
 
@@ -184,8 +184,8 @@ function MainSearchBar(props) {
     right:10,
     top:45,
     background:'rgb(55,135,251)',
-    width:'20%',
-    height:'20%',
+    width:'15%',
+    height:'18%',
     borderRadius:30,
   })); 
 
@@ -448,19 +448,20 @@ function MainSearchBar(props) {
                     aria-label="open drawer"
                     edge="start"
                     onClick={handleDrawerToggle}
-                    sx={{ mr: 2, display: { sm: 'none' } }}
+                    sx={{marginTop:'1%', mr: 2, display: { sm: 'none' } }}
                   >
                     <MenuIcon sx={{color:'rgb(157,157,181)'}} />
                   </IconButton>
 
-                  <img style={{width:'30%',height:'auto'}} src={Logo}/>
+                  <img style={{width:'30%',marginTop:'1%',height:'auto'}} src={Logo}/>
 
                   <Button 
                     onClick={handleMobileNotisToggle}
                     style={{
                       padding:0,
-                      width:'auto',
-                      height:'100%',
+                      width:'40px',
+                      height:'auto',
+                      marginTop:'1%'
                     }}>
                     <MobileAvatar variant="circular" alt={currentUser.userName} src={currentUser.profilePic} />      
                     {currentUser.notifications.length >=1 && <MobileDot></MobileDot>}            

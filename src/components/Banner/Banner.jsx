@@ -63,6 +63,8 @@ function Banner(props) {
     alignSelf:'flex-end',
     [theme.breakpoints.down('sm')]: {
       alignSelf:'center',
+      width:'190px',
+      height:'220px',
     },
     width:'220px',
     height:'250px',

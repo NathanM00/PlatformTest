@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -11,67 +11,12 @@ function EventCarrousel(props) {
 
     const [content, setContent] = React.useState(props.content);
 
-    const settings = {
-        dots: true,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 1,
-        dotsClass: "slick-dots slick-thumb",
-        adaptiveHeight: true,
-        slidesToScroll: 1,
-        initialSlide: 0,
-        nextArrow: <Next />,
-        prevArrow: <Prev />,
-        customPaging:  i => 
-            <button 
-                style={{                    
-                    zIndex:2,
-                    position:'absolute', 
-                    bottom:'100%'}}>
-                        {i + 1}
-            </button>,
-    }
-
     function CustomSlide(data){
         return(
             <Container style={{backgroundImage: `url(${data.data.backgroundImage})`}}>
                 <Title>{data.data.title}</Title>
                 <SubTitle>{data.data.date}</SubTitle>
             </Container>
-        )
-    }
-
-    function Next(props){
-        return(
-            <Button 
-                onClick={props.onClick}
-                sx={{ 
-                    position:'absolute', 
-                    right:'5%',
-                    bottom:'45%',
-                    zIndex:2,
-                    color:'black',
-                    backgroundColor:'#fff',
-                    }}>
-                <ArrowForwardIcon sx={{color:'rgb(62,52,109)', margin:0, fontSize:15}}/>
-            </Button>
-        )
-    }
-
-    function Prev(props){
-        return(
-            <Button 
-                onClick={props.onClick}
-                sx={{
-                    left:'5%',
-                    top:'45%',
-                    zIndex:2,
-                    position:'absolute', 
-                    color:'black',
-                    backgroundColor:'#fff',
-                    }}>
-                <ArrowBackIcon sx={{color:'rgb(62,52,109)', margin:0, fontSize:15}}/>
-            </Button>
         )
     }
 
@@ -87,14 +32,21 @@ function EventCarrousel(props) {
         backgroundSize:'cover',
         backgroundPosition:'center',
         width:'100%',
-        height:'250px',
-        [theme.breakpoints.down('sm')]: {
+        height:'295px',
+        [theme.breakpoints.down('lg')]: {
             paddingRight:'15%',
             paddingLeft:'5%',
-            height:'330px',
+            paddingTop:'5%',
             flexDirection:'column',
             alignItems:'flex-start',
             justifyContent:'flex-start',
+            height:'290px',
+        },
+        [theme.breakpoints.down('md')]: {
+            height:'283px',
+        },
+        [theme.breakpoints.down('sm')]: {
+            height:'200px',
         }
     })); 
 
@@ -103,6 +55,7 @@ function EventCarrousel(props) {
         height:'100%',
         [theme.breakpoints.down('sm')]: {
             width:'100%',
+            height:'45%',
         }   
     })); 
 
@@ -115,26 +68,108 @@ function EventCarrousel(props) {
         lineHeight:1,
         color:'#fff',
         fontFamily:'Gotham',
+        [theme.breakpoints.down('lg')]: {
+            width:'75%',
+            fontSize: 30,
+        },
+        [theme.breakpoints.down('md')]: {
+            fontSize: 25,
+        },
         [theme.breakpoints.down('sm')]: {
-            marginTop:'7%',
+            margin:'0%',
+            fontSize: 22,
             width:'85%',
         },
     })); 
 
     const SubTitle = styled('p')(({theme})=>({
-        fontSize: 40,
+        fontSize: 35,
         fontWeight:600,
         width:'30%',
         margin:0,
         color:'#fff',
         textAlign:'center',
         fontFamily:'Gotham',
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('lg')]: {
             textAlign:'left',
-            width:'50%',
+            marginTop:'1%',
             fontSize: 20,
         },
+        [theme.breakpoints.down('md')]: {
+            marginTop:'4%',
+            fontSize: 18,
+        },
+        [theme.breakpoints.down('sm')]: {
+            width:'50%',
+            margin:'0%',
+        },
     })); 
+
+    const ScrollNextButton = styled(Button)(({theme})=>({
+        position:'absolute',
+        right:'2%', 
+        top:'45%',  
+        zIndex:1,
+        width:'8%',
+        height:'12%', 
+        background: "#fff" ,
+        [theme.breakpoints.down('lg')]: {
+            right:'5%', 
+        },
+    })); 
+
+    const ScrollBackButton = styled(Button)(({theme})=>({
+        position:'absolute',
+        left:'2%', 
+        top:'45%',  
+        zIndex:1,
+        width:'8%',
+        height:'12%', 
+        background: "#fff" ,
+        [theme.breakpoints.down('lg')]: {
+            left:'5%', 
+        },
+    })); 
+
+    function Next(props) {
+        const { className, style, onClick } = props;
+        return (
+          <ScrollNextButton onClick={onClick}>
+              <ArrowForwardIcon  sx={{color:"#000" ,width:'30%' }}/>
+          </ScrollNextButton>
+        );
+    }      
+
+    function Prev(props) {
+        const { className, style, onClick } = props;
+        return (
+          <ScrollBackButton onClick={onClick}>
+              <ArrowBackIcon  sx={{color:"#000" ,width:'30%' }}/>
+          </ScrollBackButton>
+        );
+    }
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        nextArrow:  <Next/> ,
+        prevArrow:  <Prev/>,
+
+        appendDots:  dots => 
+            <div 
+                style={{   
+                    backgroundColor: "transparent",
+                    borderRadius: "10px",
+                    bottom:'0',
+                    padding: "10px"}}>
+                        <Button sx={{backgroundColor:'transparent'}}>{dots}</Button>
+            </div>
+    }
 
     return (
             <SlideBox >

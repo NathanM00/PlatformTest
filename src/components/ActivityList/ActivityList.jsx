@@ -6,6 +6,7 @@ import Assignments from '../../resources/images/platform/assignment.png';
 import Events from '../../resources/images/platform/events.png';
 import Followers from '../../resources/images/platform/followers.png';
 import ArrowRight from '../../resources/images/platform/arrowRight.png';
+import { Button } from '@mui/material';
 
 function ActivityList(props) {
 
@@ -23,25 +24,38 @@ function ActivityList(props) {
     margin:0,
     width:'90%',
     fontSize:18,
+    textTransform:'capitalize',
     fontFamily:'Nunito',
     textAlign:'left',
     color:'rgb(162,163,182)',
+    [theme.breakpoints.down('lg')]: {
+      fontSize:17,
+    },
+    [theme.breakpoints.down('md')]: {
+      fontSize:14,
+    },
     [theme.breakpoints.down('sm')]: {
+      fontSize:15,
       width:'70%'
-    }
+    } 
   })); 
 
   const Icon = styled('img')(({theme})=>({
     margin:0,
-    height:'70%',
-    width:'4.1%',
+    height:'auto',
+    width:'4.5%',
+    [theme.breakpoints.down('lg')]: {
+      width:'5%'
+    },
+    [theme.breakpoints.down('md')]: {
+      width:'6%'
+    },
     [theme.breakpoints.down('sm')]: {
-      height:'45%',
-      width:'10%'
+      width:'13%'
     }
   })); 
 
-  const ItemBox = styled(Box)(({theme})=>({
+  const ItemBox = styled(Button)(({theme})=>({
     display:'flex',
     alignItems:'center',
     paddingLeft:'2%',
@@ -59,12 +73,14 @@ function ActivityList(props) {
 
   const IconButton = styled(Box)(({theme})=>({
     height:'20%',
+    alignSelf:'center',
+    marginBottom:'1%',
     padding:0,
     [theme.breakpoints.down('sm')]: {
+      marginBottom:'0%',
       height:'15%',
     }
   }));  
-
 
   return (
     <Container >

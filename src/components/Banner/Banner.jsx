@@ -30,23 +30,30 @@ function Banner(props) {
   })); 
 
   const Title = styled('p')(({theme})=>({
-    fontSize: content.smallFont ?  16 : 30,
+    fontSize: content.smallFont ?  15 : 30,
     fontWeight:600,
-    margin:0,
+    margin: content.smallFont ? '' : 0,
     color:'#fff',
     fontFamily:'Gotham',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('lg')]: {
+      fontSize: content.smallFont ?  13 : 25,
+      margin: content.smallFont ? 0 : 0,
       alignSelf:'center',
+    },
+    [theme.breakpoints.down('md')]: {
+      fontSize: content.smallFont ?  13 : 20,
     },
     alignSelf:'flex-start'
   })); 
 
   const SubTitle = styled('p')(({theme})=>({
-    fontSize: content.smallFont ?  16 : 20,
-    margin:0,
+    fontSize: content.smallFont ?  15 : 20,
+    margin: content.smallFont ? '' : 0,
     color:'#fff',
     fontFamily:'Nunito',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('lg')]: {
+      fontSize: content.smallFont ?  13 : 20,
+      margin: content.smallFont ? 0 : 0,
       alignSelf:'center'
     },
     alignSelf:'flex-start'
@@ -57,24 +64,20 @@ function Banner(props) {
     [theme.breakpoints.down('sm')]: {
       alignSelf:'center',
     },
-    width:'200px',
-    height:'200px',
+    width:'220px',
+    height:'250px',
     marginRight:'1%',
   }));  
 
   const TextsBox = styled('Box')(({theme})=>({
     display:'flex',
-    [theme.breakpoints.up('xs')]: {
-      flexDirection: content.smallFont ? 'row' : 'column',
-      alignItems: 'center',
-    },
-    [theme.breakpoints.down('sm')]: {
-      marginTop:'5%',
-      flexDirection: 'column',
-      alignItems: 'center',
-    },
+    alignItems: 'center',
     justifyContent:'center',
-    height:'80%',
+    flexDirection: content.smallFont ? 'row' : 'column',
+    [theme.breakpoints.down('lg')]: {
+      flexDirection: 'column',
+    },
+    height:'100%',
     width:'100%',
   }));  
           

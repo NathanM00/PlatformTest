@@ -45,11 +45,18 @@ function ContentBox(props) {
     justifyContent:'center',
     alignItems:'center',
     borderRadius:5,
-    height:'100%',
+    height:'90%',
     width: '15%',
+    [theme.breakpoints.down('lg')]: {
+      width: '18%',
+    },
+    [theme.breakpoints.down('md')]: {
+      width: '25%',
+    },
     [theme.breakpoints.down('sm')]: {
       width: '40%',
     },
+    
     boxShadow:3,
   })); 
 
@@ -75,7 +82,7 @@ function ContentBox(props) {
       flexDirection:'row',
       display:'flex',
       padding:0,
-      height:'60%',
+      height:'50%',
       margin:0,
       alignItems:'center',
       justifyContent:'center',
@@ -100,7 +107,7 @@ function ContentBox(props) {
   return (
     <Container>
       <CssBaseline />
-        <TitleBox>
+      {content.title && <TitleBox>
           {content.title && <Title>{content.title}</Title>}
           {content.dash && <Dash/>}
           {content.nextBtn &&  <ArrowButton><ArrowForwardIcon sx={{ color:'rgb(62,52,109)', margin:0, fontSize:15}}/></ArrowButton>}
@@ -109,11 +116,11 @@ function ContentBox(props) {
                 Currently learning
               </LearningText>
               <FlagBox>
-                <img style={{width:'15%',height:'55%'}} src={AmericanFlag}/>
+                <img style={{width:'15%',height:'auto'}} src={AmericanFlag}/>
                 <LenguageText>{content.lenguage}</LenguageText>
               </FlagBox>
             </LenguageBox>}
-        </TitleBox>
+        </TitleBox>}
         <Box   
           sx={{
             alignItems:'flex-end',

@@ -1,8 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
 import ProfilePic from '../../resources/images/platform/profilePic.png';
-import { Container} from '@mui/material';
 import ContentBox from '../ContentBox/ContentBox';
 import Banner from '../Banner/Banner';
 import WelcomeImage from '../../resources/images/banners/welcomeImage.png';
@@ -12,10 +10,12 @@ import ProgressStats from '../ProgressStats/ProgressStats';
 import ActivityList from '../ActivityList/ActivityList';
 import EventCarrousel from '../EventCarrousel/EventCarrousel';
 import Clock from '../../resources/images/platform/clock.png';
+import Clock2 from '../../resources/images/platform/clock2.png';
 import BlueEvent from '../../resources/images/platform/event1.png';
 import YellowEvent from '../../resources/images/platform/event2.png';
 import EventsToday from '../EventsToday/EventsToday';
 import ProgressOverview from '../ProgressOverview/ProgressOverview';
+import { styled } from '@mui/material/styles';
 
 function MainContent(props) {
 
@@ -70,11 +70,10 @@ function MainContent(props) {
     title:'Events',
     width:'100%',
     height:'50%',
-    mobileHeight:'100%',
+    mobileHeight:'75%',
     content: 
     <Box sx={{
       display:'flex',
-      justifyContent:'space-beteween',
       width:'100%',
       height:'100%', 
       flexDirection:{ xs: 'column', sm: 'row' }}}>
@@ -87,7 +86,7 @@ function MainContent(props) {
                 date:'May, 20'
               },
               {
-                backgroundImage:Clock,
+                backgroundImage:Clock2,
                 topic:'Sience',
                 title:'Youth Talent & Education',
                 date:'May, 20'
@@ -106,6 +105,11 @@ function MainContent(props) {
                   icon:YellowEvent,
                   title:'Youth Talent & Education 2',
                   time:'11:35AM'
+                },
+                {
+                  icon:BlueEvent,
+                  title:'Youth Talent & Education',
+                  time:'10:30AM'
                 },
               ]
         }}/>
@@ -142,7 +146,7 @@ function MainContent(props) {
   const progress={
     title:'Progress',
     width:'60%',
-    height:'40%',
+    height:'54.5%',
     mobileHeight:'80%',
     dash:true,
     content: 
@@ -150,7 +154,7 @@ function MainContent(props) {
       <ProgressStats
         content={{
           width:'100%',
-          height:'100%',
+          height:'80%',
           mobileHeight:'65%',
           items:[
             {
@@ -186,28 +190,30 @@ function MainContent(props) {
           width:'100%',
           height:'20%',
           mobileHeight:'35%',
-          title:'Confirm your account details.',
-          subtitle:"Please confirm you email and phone number. 😨",
+          title:'Confirm your account details. ',
+          subtitle:" Please confirm you email and phone number. 😨",
           backgroundImage: YellowBanner,
        }}/>
     </Box>,
   }
 
-
-  const progressOverview={
+  const progressOverview={   
+     title:false,
     width:'35%',
-    height:'40%',
+    height:'55%',
     mobileHeight:'60%',
     content:  
       <ProgressOverview 
         content={{
+          height:'100%',
+          colors:["rgb(255,209,53)", "rgb(255,122,86)"],
           data:[
             {
-              "name": "Group A",
+              "name": "Completed",
               "value": 20
             },
             {
-              "name": "Group B",
+              "name": "Left",
               "value": 30
             },   
           ]
@@ -215,20 +221,30 @@ function MainContent(props) {
     />
   }
 
+  const Container = styled(Box)(({ theme }) => ({
+    paddingLeft:'10%',
+    paddingRight:'10%',
+    overflow:'scroll',
+    display:'flex',
+    justifyContent:'space-between', 
+    width:'100%',
+    height:'100%',
+    flexWrap:'wrap',
+    [theme.breakpoints.down('sm')]: {
+      marginTop:'100px',
+      paddingLeft:'5%',
+      paddingRight:'5%',
+    },
+  }));
+
   return (
-    <Box sx={{ display: 'flex',width:'100%',height:'90%' }}>
-      <CssBaseline />
-      <Container 
-        sx={{overflow:'scroll',display:'flex',justifyContent:'space-between', width:'100%',height:'100%',flexWrap:'wrap'}}
-      >
+      <Container>
         <ContentBox content={dashboard}/>
         <ContentBox content={events}/>
         <ContentBox content={activity}/>
         <ContentBox content={progressOverview}/>
         <ContentBox content={progress}/>
-
       </Container>
-    </Box>
   );
 }
 

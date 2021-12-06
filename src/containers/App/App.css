@@ -1,5 +1,12 @@
 .App {
   text-align: center;
   height: 100vh;
+  width: auto;
   background-color: rgb(245, 245, 251);
+}
+
+.App_container {
+  height: 92%;
+  display: flex;
+  width: 100%;
 }

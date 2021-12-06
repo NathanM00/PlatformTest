@@ -25,11 +25,19 @@ function ProgressStats(props) {
     flexDirection:'row',
     display:'flex',
     margin:0,
-    width:'30%',
     fontSize:16,
     fontFamily:'GilroyExtraBold',
     textAlign:'left',
-    color:'rgb(162,163,182)'
+    color:'rgb(162,163,182)',
+    [theme.breakpoints.down('lg')]: {
+      fontSize:14,
+    },
+    [theme.breakpoints.down('md')]: {
+      fontSize:11,
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize:16,
+    },
   })); 
 
   const Number = styled('p')(({theme})=>({
@@ -38,6 +46,12 @@ function ProgressStats(props) {
     margin:0,
     fontFamily:'Gotham',
     color:'rgb(13,53,94)',
+    [theme.breakpoints.down('lg')]: {
+      fontSize:18,
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize:40,
+    },
   }));
   
   const TitleHighlight  = styled('p')(({theme})=>({
@@ -45,9 +59,19 @@ function ProgressStats(props) {
     display:'flex',
     margin:0,
     width:'30%',
+    fontSize:16,
     fontFamily:'GilroyExtraBold',
     textAlign:'left',
     color:'#fff',
+    [theme.breakpoints.down('lg')]: {
+      fontSize:14,
+    },
+    [theme.breakpoints.down('md')]: {
+      fontSize:11,
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize:16,
+    },
   })); 
 
   const NumberHighlight = styled('p')(({theme})=>({
@@ -56,6 +80,12 @@ function ProgressStats(props) {
     margin:0,
     fontFamily:'Gotham',
     color:'#fff',
+    [theme.breakpoints.down('lg')]: {
+      fontSize:18,
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize:40,
+    },
   })); 
 
   const ItemBox = styled(Box)(({theme})=>({
@@ -85,7 +115,6 @@ function ProgressStats(props) {
     height:'30%',
     borderRadius:5,
     width:'30%',
-    boxShadow:1,
     [theme.breakpoints.down('sm')]: {
       height:'25%',
       width:'45%',
